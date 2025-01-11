@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(126, 173, 126);
+}
+.field {
+  display: grid;
+  width: 75vmin; 
+  height: 75vmin;
+  border: 5px solid whitesmoke;
+  align-items: center;
+  margin-top: 2vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  
+}
+.fieldCell, .fieldCellUsed, .fieldWin {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10vmin;
+  background-color: rgb(113, 152, 113);
+}
+
+.fieldCellUsed{
+  background-color: rgb(66, 79, 66);
+}
+
+.fieldWin{
+  background-color: red;
+}
+
+h1{
+  color: whitesmoke;
+}
+
+.fieldSize {
+  color: whitesmoke;
+  margin-top: 2vh;
+}
+
+#update, #clean{
+  background-color: white;
+  border: 1px black solid;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 2px;
+  font-size: 14px;
+}
+#size{
+  border: 1px black solid;
+  background-color: whitesmoke;
+  border-radius: 2px;
+  padding: 1px;
+}
+.player{
+  margin-top: 1vmin;
+  font-size: 16px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+#now{
+  color: rgb(8, 61, 8);
+  font-size: 24px;
+}
+#clean{
+  position: relative;
+  left: 47vmin;
+  bottom: 3.25vmin;
+}
+
+#result{
+  position: absolute;
+  left: 20vmin;
+  top: 30vmin;
+  font-size: 30px;
+  color: white;
+}

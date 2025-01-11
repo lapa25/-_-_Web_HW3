@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Крестики-нолики</title>
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/f1/8d/42/f18d42a28e8373dfe920b4740bf8b532.png" type="image/x-icon"> 
+</head>
+<body>
+    <header>
+        <h1>Крестики-нолики</h1>
+    </header>   
+    <div class="fieldSize">
+        <label for="size">Размер поля: </label>
+        <input type="number" id="size" value="3" min="3" max="10">
+        <button id="update">Обновить</button>
+      </div>
+    <div class="player">
+        <form id="first" >
+            <label for="player">Первые ходят: </label>
+            <select name="player" id="player">
+                <option value="X">X</option>
+                <option value="0">0</option>
+            </select>
+        </form>
+        <div> , ход <span id="now">X</span></div>
+    </div>
+    <div id="result"><p></p></div>
+    <div class="field"></div>
+    <button id="clean">Очистить поле</button>
+    <script src="script.js"></script>
+</body>
+</html>
