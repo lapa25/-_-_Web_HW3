@@ -3,7 +3,8 @@ const sizeInput = document.getElementById("size");
 const updateButton = document.getElementById("update");
 const cleanButton = document.getElementById("clean")
 const nowText = document.getElementById("now");
-const result = document.getElementById("result")
+const dialogElement = document.getElementById("dialog");
+
 let now = 'X';
 let cells;
 
@@ -43,7 +44,6 @@ first.addEventListener('change', function(e){
 function createField(size) {
   board.innerHTML = "";
   ArrayResult();
-  result.textContent = '';
   board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   for(let i = 0; i < size; i++) {
@@ -65,7 +65,9 @@ function createField(size) {
           let res = checkResult(cell);
           if (res[0] == 'win'){
             changePlayer(i, j)
-            result.textContent = `Победили ${now}!`;
+            dialogElement.show();
+            let p = dialogElement.getElementsByTagName('p');
+            p[0].textContent = `Победили ${now}!`;
             cells.forEach(element => {
               if (res[1].indexOf(element.getAttribute('id')) != -1){
                 element.classList.add('fieldWin');
@@ -74,7 +76,9 @@ function createField(size) {
             })
           }
           if (res[0] == 'draw'){
-            result.textContent = `Ничья!`;
+            let p = dialogElement.getElementsByTagName('p');
+            p[0].textContent = `Ничья!`;
+            dialogElement.show();
             cells.forEach(element => {
               element.classList.add('fieldCellUsed');
             })
